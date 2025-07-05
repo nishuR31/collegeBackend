@@ -1,10 +1,10 @@
 ## Modern REST API for College Backend Management
 
-[![License](https://img.shields.io/github/license/nishuR31/collegeBackend?style=flat)](LICENSE)
-![Issues](https://img.shields.io/github/issues/nishuR31/collegeBackend?color=red&style=flat)
-![Stars](https://img.shields.io/github/stars/nishuR31/collegeBackend?style=flat)
-![Forks](https://img.shields.io/github/forks/nishuR31/collegeBackend?style=flat)
-![Made With](https://img.shields.io/badge/Made%20with-Node.js-green?style=flat&logo=node.js&logoColor=white)
+[![License](https://img.shields.io/github/license/nishuR31/collegeBackend?style=social)](LICENSE)
+![Issues](https://img.shields.io/github/issues/nishuR31/collegeBackend?style=social)
+![Stars](https://img.shields.io/github/stars/nishuR31/collegeBackend?style=social)
+![Forks](https://img.shields.io/github/forks/nishuR31/collegeBackend?style=social)
+![Made With](https://img.shields.io/badge/Made%20with-Node.js-green?style=social&logo=node.js&logoColor=black)
 
 <br>
 
@@ -212,4 +212,4 @@ PRs are welcome. If you like it, give it a ⭐ star!
 ### 📫 Contact
 
 [![nishuR31](https://img.shields.io/badge/Github-black?logo=github&logoColor=white&style=flat)](https://github.com/nishuR31)
-[![nishanrajak01@gmail.com](https://img.shields.io/badge/Mail%20Me-black?logo=gmail&logoColor=white&style=flat)](mailto:nishanrajak01@gmail.com)
+[![nishangithub1@gmail.com](https://img.shields.io/badge/Mail%20Me-black?logo=gmail&logoColor=white&style=flat)](mailto:nishangithub@gmail.com)
