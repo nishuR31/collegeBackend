@@ -1,7 +1,6 @@
 // signup:auth/user/signup
 
-
-import codes from "../contants/codes.js";
+import codes from "../constants/codes.js";
 import ApiErrorResponse from "../utils/apiErrorResponse.js";
 import ApiResponse from "../utils/apiResponse.js";
 import asyncHandler from "../utils/asyncHandler.js";
@@ -15,7 +14,12 @@ let signup = asyncHandler(async (req, res) => {
   if (!(role === user)) {
     return res
       .status(codes.unauthorized)
-      .json(new ApiErrorResponse("Mismatch role access detected", codes.unauthorized).res());
+      .json(
+        new ApiErrorResponse(
+          "Mismatch role access detected",
+          codes.unauthorized
+        ).res()
+      );
   }
   if (isEmptyArr([userName, email, role]) || !password) {
     return res

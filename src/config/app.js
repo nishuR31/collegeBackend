@@ -2,9 +2,9 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 // import expressLimit from "express-rate-limit";
-import cookie from "cookie-parser"
+import cookie from "cookie-parser";
 import logger from "../utils/logger.js";
-import codes from "../contants/codes.js";
+import codes from "../constants/codes.js";
 import ApiErrorResponse from "../utils/apiErrorResponse.js";
 import forgotRoute from "../routes/forgot.route.js";
 import signinRoute from "../routes/signin.route.js";
@@ -74,7 +74,12 @@ app.get((err, req, res, next) => {
   res
     .status(codes.badRequest)
     .json(
-      new ApiErrorResponse(`Error occured : ${err}`, codes.badRequest, {}, err).res()
+      new ApiErrorResponse(
+        `Error occured : ${err}`,
+        codes.badRequest,
+        {},
+        err
+      ).res()
     );
 });
 

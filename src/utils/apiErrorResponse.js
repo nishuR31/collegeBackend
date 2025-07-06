@@ -1,7 +1,6 @@
-
 // ApiErrorResponse
 
-import codes from "../contants/codes.js";
+import codes from "../constants/codes.js";
 
 export default class ApiErrorResponse extends Error {
   constructor(
@@ -13,7 +12,7 @@ export default class ApiErrorResponse extends Error {
     super(err.message || message);
     this.code = code;
     this.payload = payload;
-    this.stack=err.stack || Error.captureStackTrace(this, this.constructor);
+    this.stack = err.stack || Error.captureStackTrace(this, this.constructor);
   }
 
   res() {

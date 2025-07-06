@@ -1,7 +1,6 @@
-
 // help: /help
 
-import codes from "../contants/codes.js";
+import codes from "../constants/codes.js";
 import ApiResponse from "../utils/apiResponse.js";
 import asyncHandler from "../utils/asyncHandler.js";
 
@@ -13,7 +12,7 @@ let help = asyncHandler(async (req, res) => {
       forgotPassword: "POST /auth/forgot-password",
       verifyForgotToken: "POST /auth/verify-token",
       changePassword: "POST /auth/change-password",
- 
+
       logout: "GET /profile/:username/logout",
       profile: "GET /profile/:username",
       signin: "POST /auth/:user/signin",
@@ -21,7 +20,8 @@ let help = asyncHandler(async (req, res) => {
       tokenRotation: "GET /auth/:user/token-rotation",
       help: "GET /help",
     }).res()
-  );2
+  );
+  2;
 });
 
 export default help;

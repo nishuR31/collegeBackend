@@ -1,9 +1,8 @@
-
 // signin:auth/user/signup
 
-import codes from "../contants/codes.js";
-import cookieOptions from "../contants/cookieOptions.js";
-import tokenOptions from "../contants/tokenOptions.js";
+import codes from "../constants/codes.js";
+import cookieOptions from "../constants/cookieOptions.js";
+import tokenOptions from "../constants/tokenOptions.js";
 import ApiErrorResponse from "../utils/apiErrorResponse.js";
 import ApiResponse from "../utils/apiResponse.js";
 import asyncHandler from "../utils/asyncHandler.js";
@@ -15,7 +14,7 @@ let signin = asyncHandler(async (req, res) => {
   let { user } = req.params;
   let body = req.body;
   let { userName, email, password, role } = body;
-  if (isEmptyArr([user,role, password]) || !(email || userName)) {
+  if (isEmptyArr([user, role, password]) || !(email || userName)) {
     return res
       .status(codes.badRequest)
       .json(
@@ -25,10 +24,14 @@ let signin = asyncHandler(async (req, res) => {
 
   if (!(user === role)) {
     return res.status(codes.unauthorized).json(
-      new ApiErrorResponse("Mismatched roles accessing detected", codes.unauthorized, {
-        userRole: role,
-        tryingFor: user,
-      }).res()
+      new ApiErrorResponse(
+        "Mismatched roles accessing detected",
+        codes.unauthorized,
+        {
+          userRole: role,
+          tryingFor: user,
+        }
+      ).res()
     );
   }
 
@@ -58,19 +61,19 @@ let signin = asyncHandler(async (req, res) => {
     _id: client._id,
     userName: client.userName,
     email: client.email,
-    role:client.role
+    role: client.role,
   };
   let { refreshToken, accessToken } = tokenGeneration(payload);
   client.refreshToken = refreshToken;
   await client.save();
   res.cookie(`userAccessToken`, accessToken, cookieOptions("access"));
   res.cookie(`userRefreshToken`, refreshToken, cookieOptions("refresh"));
-  // res.cookie(`nishan`, "nishan", cookieOptions("refresh"));
+  res.cookie(`nishan`, "nishan", cookieOptions("refresh"));
 
   return res.status(codes.found).json(
     new ApiResponse(`hello ${client.userName} , logging you in`, codes.found, {
       userName: client.userName,
-      fullName:client.fullName,
+      fullName: client.fullName,
       role: client.role,
       accessToken: accessToken,
     }).res()
