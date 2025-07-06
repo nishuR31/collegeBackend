@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 import tokenOptions from "../constants/tokenOptions.js";
-function accessToken(payload, options = {}) {
+function accessToken(payload) {
   return jwt.sign(payload, process.env.SECRET_ACC, tokenOptions("access"));
 }
-function refreshToken(payload, options = {}) {
+function refreshToken(payload) {
   return jwt.sign(payload, process.env.SECRET_REF, tokenOptions("refresh"));
 }
 
