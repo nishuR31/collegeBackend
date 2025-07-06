@@ -9,7 +9,7 @@ let help = asyncHandler(async (req, res) => {
   return res.status(codes.ok).json(
     new ApiResponse("Help guide", codes.ok, {
       edit: "POST /profile/:username/edit",
-      deletion: "GET /profile/:username/deletion",
+      deletion: "GET /profile/:username/delete",
       forgotPassword: "POST /auth/forgot-password",
       verifyForgotToken: "POST /auth/verify-token",
       changePassword: "POST /auth/change-password",
