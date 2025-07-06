@@ -7,6 +7,8 @@ import codes from "../constants/codes.js";
 import ApiErrorResponse from "../utils/apiErrorResponse.js";
 import { tokenGeneration } from "../utils/tokenization.js";
 import tokenOptions from "../constants/tokenOptions.js";
+import cookieOptions from "../constants/cookieOptions.js";
+
 
 let tokenRotation = asyncHandler(async (req, res) => {
   let { user } = req.params;
