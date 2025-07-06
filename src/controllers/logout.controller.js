@@ -26,12 +26,14 @@ let logout = asyncHandler(async (req, res) => {
   client.refreshToken = null;
   await client.save();
 
-  let { userAccessToken, userRefreshToken } = req.cookies;
+for (const cookieName in req.cookies) {
   res.clearCookie(cookieName, {
     httpOnly: true,
-    sameSite: "Lax", // or Lax/Strict
-    secure: "None",
+    sameSite: "Lax",
+    secure: false, // ✅ secure must be a boolean, not a string
   });
+}
+
 
   //   res.clearCookie("userAccessToken", {
   //   httpOnly: true,
