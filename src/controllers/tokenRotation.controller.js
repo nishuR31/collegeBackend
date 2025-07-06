@@ -36,7 +36,7 @@ let tokenRotation = asyncHandler(async (req, res) => {
 
   client.refreshToken = refreshToken;
   await client.save();
-  res.cookie(`userAccessToken`, AccessToken, cookieOptions("access"));
+  res.cookie(`userAccessToken`, accessToken, cookieOptions("access"));
   res.cookie(`userRefreshToken`, refreshToken, cookieOptions("refresh"));
   return res.status(codes.ok).json(
     new ApiResponse("Token rotation successfull", codes.ok, {
