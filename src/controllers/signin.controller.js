@@ -65,7 +65,7 @@ let signin = asyncHandler(async (req, res) => {
   await client.save();
   res.cookie(`userAccessToken`, accessToken, cookieOptions("access"));
   res.cookie(`userRefreshToken`, refreshToken, cookieOptions("refresh"));
-  res.cookie(`nishan`, "nishan", cookieOptions("refresh"));
+  // res.cookie(`nishan`, "nishan", cookieOptions("refresh"));
 
   return res.status(codes.found).json(
     new ApiResponse(`hello ${client.userName} , logging you in`, codes.found, {
